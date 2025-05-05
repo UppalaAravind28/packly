@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login |Packly</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/register.css' %}"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo"><a herf="/">Packly</a></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="register">Register</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Page Title -->
+      <div class="title">Login</div>
+
+      <!-- Login Form -->
+      <div class="content">
+        <form action="login" method="post">
+          {% csrf_token %}
+
+          <!-- Message Display -->
+          {% if messages %}
+          <div>
+            {% for message in messages %}
+            <p style="color: red">{{ message }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <!-- Username -->
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Username</span>
+              <input
+                type="text"
+                placeholder="Enter your username"
+                name="username"
+                required
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="button">
+            <input type="submit" value="Login" />
+          </div>
+
+          <!-- Link to Register -->
+          <p style="text-align: center; margin-top: 10px">
+            Don't have an account?
+            <a href="{% url 'register' %}">Register here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

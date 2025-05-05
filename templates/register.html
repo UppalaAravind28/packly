@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Registration Form | CodingLab</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/register.css' %}"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo"><a herf="/">Packly</a></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="login">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Section: Page Title -->
+      <div class="title">Registration</div>
+
+      <!-- Section: Form Content -->
+      <div class="content">
+        <form action="register" method="post">
+          {% csrf_token %}
+
+          <!-- Group: User Details (First Name, Last Name, Username, Email) -->
+          <div class="user-details">
+            <!-- Field: First Name -->
+            <div class="input-box">
+              <span class="details">First Name</span>
+              <input
+                type="text"
+                placeholder="Enter your First Name"
+                name="first_name"
+                required
+              />
+            </div>
+
+            <!-- Field: Last Name -->
+            <div class="input-box">
+              <span class="details">Last Name</span>
+              <input
+                type="text"
+                placeholder="Enter your Last Name"
+                name="last_name"
+                required
+              />
+            </div>
+
+            <!-- Field: Username -->
+            <div class="input-box">
+              <span class="details">Username</span>
+              <input
+                type="text"
+                placeholder="Enter your username"
+                name="username"
+                required
+              />
+            </div>
+
+            <!-- Field: Email -->
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                name="email"
+                required
+              />
+            </div>
+
+            <!-- Field: Password -->
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                name="password1"
+                required
+              />
+            </div>
+
+            <!-- Field: Confirm Password -->
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input
+                type="password"
+                placeholder="Confirm your password"
+                name="password2"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="button">
+            <input type="submit" value="Register" />
+          </div>
+        </form>
+      </div>
+      {% if messages %}
+      <div>
+        {% for message in messages %}
+        <p style="color: red">{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
