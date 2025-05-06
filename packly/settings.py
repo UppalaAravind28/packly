@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-!jbxt!&bc-@b6@brl%6m8ng^b1nb-30ug*80ckd^d65=j6#+0)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000','127.0.0.1' ,'dpg-d0cp3mbe5dus73ajr6i0-a']
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -74,17 +76,33 @@ WSGI_APPLICATION = 'packly.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'packly',
-        'USER':'postgres',
-        'PASSWORD': '1234',
-        'HOST':'localhost',
-        'PORT':'5432'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'packly',
+#         'USER':'postgres',
+#         'PASSWORD': '1234',
+#         'HOST':'localhost',
+#         'PORT':'5432'
+#     }
+# }
 
+# settings.py
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'packly',           
+#         'USER': 'aravind',       
+#         'PASSWORD': '19gbZtxXJocZg7LLMETxmJ0Wosb1fAup',  
+#         'HOST': 'dpg-d0cp3mbe5dus73ajr6i0-a',  
+#         'PORT': '5432',
+#     }
+# }
+
+DATABASES = {
+    'default': dj_database_url.parse('postgresql://aravind:19gbZtxXJocZg7LLMETxmJ0Wosb1fAup@dpg-d0cp3mbe5dus73ajr6i0-a.singapore-postgres.render.com/packly')
+}
 
 
 # Password validation
