@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!jbxt!&bc-@b6@brl%6m8ng^b1nb-30ug*80ckd^d65=j6#+0)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8000','127.0.0.1' ,'dpg-d0cp3mbe5dus73ajr6i0-a','packly.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
