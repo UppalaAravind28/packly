@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'packly.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://aravind:19gbZtxXJocZg7LLMETxmJ0Wosb1fAup@dpg-d0cp3mbe5dus73ajr6i0-a.singapore-postgres.render.com/packly')
+    'default': dj_database_url.parse('postgresql://aravind:19gbZtxXJocZg7LLMETxmJ0Wosb1fAup@dpg-d0cp3mbe5dus73ajr6i0-a/packly')
 }
 
 
