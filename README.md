@@ -203,8 +203,7 @@ If you'd like to contribute or report an issue, feel free to open a PR or issue 
 ## 📬 Contact
 
 For questions or collaborations, reach out at:
-📧 aravind@example.com  
-🐦 @AravindDev_
+📧 uppalaaravind28@gmail.com  
 
 ---
 
